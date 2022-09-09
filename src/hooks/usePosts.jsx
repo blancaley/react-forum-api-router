@@ -7,8 +7,8 @@ const usePosts = () => {
   useEffect(() => {
     try {
       const fetchPosts = async () => {
-        const { data } = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        setAllPosts(data);
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        setAllPosts(response.data);
       }
       fetchPosts();
     } catch (error) {
