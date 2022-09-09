@@ -1,8 +1,9 @@
 import './Homepage.css';
 import usePosts from '../hooks/usePosts';
+import Post from './Post';
 
 function Homepage() {
-  const allPosts = usePosts([]);
+  const allPosts = usePosts();
 
   return (
     <div className="App">
@@ -10,7 +11,7 @@ function Homepage() {
        
       </header>
       <main>
-        {allPosts}
+        {allPosts.map((p, i) => <Post key={i} title={p.title}/>)}
       </main>
     </div>
   );
