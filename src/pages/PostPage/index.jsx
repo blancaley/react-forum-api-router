@@ -1,7 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Comment from "../components/Comment";
+import Comment from "../../components/Comment";
+import css from './postpage.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const PostPage = () => {
   const { id } = useParams();
@@ -33,14 +37,19 @@ const PostPage = () => {
   
   return (
     <div>
-      <Link to="/">
-        <button>Go to homepage</button>
+      <Link to="/" className={css.backBtn}>
+        <FontAwesomeIcon icon={faChevronLeft}/>
+        Go back
       </Link>
-      <h1>{ singlePost?.title }</h1>
-      <p>{singlePost?.body}</p>
-      {allComments
-        .filter(comment => comment.postId === singlePost?.id)
-        .map((c, i)=><Comment key={i} name={c.name} email={c.email} body={c.body}/>)}
+      <main className={css.container}>
+        <div className={css.top}>
+          <h1>{ singlePost?.title }</h1>
+          <p>{singlePost?.body}</p>
+        </div>
+        {allComments
+          .filter(comment => comment.postId === singlePost?.id)
+          .map((c, i)=><Comment key={i} name={c.name} email={c.email} body={c.body}/>)}
+      </main>
     </div>
     );
 }

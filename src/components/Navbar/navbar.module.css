@@ -1,0 +1,23 @@
+.navbar {
+  padding-left: 60px;
+}
+
+.navlink {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.navlink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navlink.active {
+  font-weight: bold;
+}
+
+a.navlink {
+  color: #222;
+  text-decoration: none;
+  padding: 30px;
+}
