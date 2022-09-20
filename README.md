@@ -3,6 +3,7 @@
 This app is built using React.\
 To enable client side routing I'm using React Router. This allows the app to update the URL from a link click without making another request from the server.\
 JSONPlaceholder is used as an API to fetch posts and comments to display on the forum.
+The app is styled using css modules and React Font Awesome.
 
 ## Pages
 ### / (Home Page)
